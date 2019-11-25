@@ -8,5 +8,5 @@ import java.util.Optional;
 
 @Repository
 public interface CadeiraRepo extends CrudRepository<Cadeira,Long> {
-    Optional<Cadeira> findByName(String name);
+    Optional<Cadeira> findByNome(String name);
 }

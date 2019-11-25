@@ -2,11 +2,14 @@ package com.example.demo.models;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
+import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
 
 import javax.persistence.*;
 
+@Data
+@Entity
 public class Cadeira {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -20,13 +23,14 @@ public class Cadeira {
     @JsonBackReference
     private Curso curso;
 
-    @ManyToOne
+    //ACRESCENTEI O CASCADE ARGUMENT NAO SEI SE CORRETO
+    @ManyToOne(cascade = CascadeType.PERSIST)
     @ToString.Exclude
     @EqualsAndHashCode.Exclude
     @JsonBackReference
     private Explicador explicador;
 
-    private Cadeira(String nome){
+    public Cadeira(String nome){
         this.nome = nome;
     }
 

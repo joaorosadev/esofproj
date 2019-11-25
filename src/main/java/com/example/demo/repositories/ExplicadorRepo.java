@@ -8,5 +8,5 @@ import java.util.Optional;
 
 @Repository
 public interface ExplicadorRepo extends CrudRepository<Explicador,Long> {
-    Optional<Explicador> findByName(String name);
+    Optional<Explicador> findByNome(String name);
 }

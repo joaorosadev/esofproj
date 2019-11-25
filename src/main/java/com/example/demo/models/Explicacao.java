@@ -1,15 +1,17 @@
 package com.example.demo.models;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import lombok.Data;
 import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
 import lombok.ToString;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
 import java.time.LocalDateTime;
 
+@Data
+@Entity
+@NoArgsConstructor
 public class Explicacao {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

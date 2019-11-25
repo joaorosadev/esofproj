@@ -2,6 +2,7 @@ package com.example.demo.models;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
+import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
 
@@ -9,6 +10,8 @@ import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
 
+@Data
+@Entity
 public class Curso {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
