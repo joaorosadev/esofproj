@@ -16,8 +16,6 @@ class FaculdadeTest {
         faculdade.addCurso(curso);
 
         assertEquals(1,faculdade.getCursos().size());
-        assertNotEquals(0,faculdade.getCursos().size());
-
         assertEquals(curso.getFaculdade(),faculdade);
     }
 }

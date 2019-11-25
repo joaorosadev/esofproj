@@ -15,8 +15,16 @@ class CursoTest {
         curso.addCadeira(cadeira);
 
         assertEquals(1,curso.getCadeiras().size());
-        assertNotEquals(0,curso.getCadeiras().size());
-
         assertEquals(cadeira.getCurso(),curso);
+    }
+
+    @Test
+    void setFaculdade() {
+        Curso curso = new Curso ("Eng. Inf.");
+        Faculdade faculdade = new Faculdade("UFP");
+
+        curso.setFaculdade(faculdade);
+
+        assertEquals(faculdade, curso.getFaculdade());
     }
 }

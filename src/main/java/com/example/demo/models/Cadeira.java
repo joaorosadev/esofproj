@@ -23,7 +23,7 @@ public class Cadeira {
     @JsonBackReference
     private Curso curso;
 
-    //ACRESCENTEI O CASCADE ARGUMENT NAO SEI SE CORRETO
+    //Added Persist
     @ManyToOne(cascade = CascadeType.PERSIST)
     @ToString.Exclude
     @EqualsAndHashCode.Exclude
