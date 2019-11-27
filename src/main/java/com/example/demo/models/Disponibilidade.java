@@ -11,6 +11,7 @@ import java.time.DayOfWeek;
 
 @Data
 @Entity
+@NoArgsConstructor
 public class Disponibilidade {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

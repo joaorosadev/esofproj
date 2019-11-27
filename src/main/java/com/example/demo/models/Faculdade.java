@@ -2,6 +2,7 @@ package com.example.demo.models;
 
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.util.HashSet;
@@ -9,6 +10,7 @@ import java.util.Set;
 
 @Data
 @Entity
+@NoArgsConstructor
 public class Faculdade {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

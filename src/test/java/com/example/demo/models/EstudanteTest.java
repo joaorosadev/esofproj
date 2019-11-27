@@ -29,7 +29,17 @@ class EstudanteTest {
         explicador.addCadeira(cadeira);
         explicador.addDisponibilidade(disp);
 
-        Explicacao explicacao = estudante.marcarExplicacao(LocalDateTime.of(2019,11,28,12,0),cadeira);
+        //Marcar em disponibilidade livre
+        Explicacao explicacao = estudante.marcarExplicacao(LocalDateTime.of(2019,11,29,12,0),cadeira);
         assertNotNull(explicacao);
+
+        //Marcar fora da disponibilidade
+        Explicacao explicacao2 = estudante.marcarExplicacao(LocalDateTime.of(2019,11,29,1,0), cadeira);
+        assertNull(explicacao2);
+
+        //Marcar em disponibilidade, mas ocupada
+        Explicacao explicacao3 = estudante.marcarExplicacao(LocalDateTime.of(2019,11,29,12,0),cadeira);
+        assertNull(explicacao3);
     }
+
 }
