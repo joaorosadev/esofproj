@@ -14,6 +14,7 @@ import org.springframework.stereotype.Component;
 import javax.transaction.Transactional;
 import java.time.DayOfWeek;
 import java.time.LocalDateTime;
+import java.time.LocalTime;
 
 @Component
 @Transactional
@@ -53,15 +54,22 @@ public class Bootstrap implements ApplicationListener<ContextRefreshedEvent> {
         Estudante est3 = new Estudante("Sara");
         Estudante est4 = new Estudante("Alexandra");
 
-        Disponibilidade d1 = new Disponibilidade(DayOfWeek.WEDNESDAY,14,16);
-        Disponibilidade d2 = new Disponibilidade(DayOfWeek.FRIDAY,8,12);
+        LocalTime hIn = LocalTime.of(14,0), hFim = LocalTime.of(16,0);
+        LocalTime hIn2 = LocalTime.of(8,0), hFim2 = LocalTime.of(12,0);
+
+        Disponibilidade d1 = new Disponibilidade(DayOfWeek.WEDNESDAY,hIn,hFim);
+        Disponibilidade d2 = new Disponibilidade(DayOfWeek.FRIDAY,hIn2,hFim2);
 
         //Adicionar cursos à faculdade (2 para uma)
         faculdade1.addCurso(curso1);
         faculdade1.addCurso(curso2);
-        //Adicionar cadeiras aos cursos (duas por curso)
+        //Adicionar cadeiras,explicadores e estudantes aos cursos (duas por curso)
         curso1.addCadeira(cadeira1); curso1.addCadeira(cadeira2);
         curso2.addCadeira(cadeira3); curso2.addCadeira(cadeira4);
+        curso1.addEstudante(est1); curso1.addEstudante(est2);
+        curso2.addEstudante(est3); curso2.addEstudante(est4);
+        curso1.addExplicador(exp1); curso1.addExplicador(exp2);
+        curso2.addExplicador(exp3); curso2.addExplicador(exp4);
         //Adicionar cadeiras aos explicador (uma por explicador)
         exp1.addCadeira(cadeira1);
         exp2.addCadeira(cadeira2);

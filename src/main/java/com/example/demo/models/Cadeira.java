@@ -29,7 +29,7 @@ public class Cadeira {
     @ManyToOne(cascade = CascadeType.PERSIST)
     @ToString.Exclude
     @EqualsAndHashCode.Exclude
-    @JsonBackReference
+    @JsonBackReference(value="secondParent")
     private Explicador explicador;
 
     public Cadeira(String nome){

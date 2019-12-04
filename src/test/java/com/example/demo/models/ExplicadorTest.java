@@ -3,6 +3,7 @@ package com.example.demo.models;
 import org.junit.jupiter.api.Test;
 
 import java.time.DayOfWeek;
+import java.time.LocalTime;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -23,7 +24,8 @@ class ExplicadorTest {
     @Test
     void addDisponibilidade() {
         Explicador explicador = new Explicador("Alves");
-        Disponibilidade disponibilidade = new Disponibilidade(DayOfWeek.WEDNESDAY,15,18);
+        LocalTime hmIn = LocalTime.of(15,0), hmFim = LocalTime.of(18,0);
+        Disponibilidade disponibilidade = new Disponibilidade(DayOfWeek.WEDNESDAY,hmIn,hmFim);
 
         assertEquals(0,explicador.getDisponibilidades().size());
         explicador.addDisponibilidade(disponibilidade);

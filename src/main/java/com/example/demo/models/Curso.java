@@ -32,6 +32,14 @@ public class Curso {
     @JsonManagedReference
     private Set<Cadeira> cadeiras=new HashSet<>();
 
+    @OneToMany(mappedBy = "curso",cascade = CascadeType.PERSIST)
+    @JsonManagedReference
+    private Set<Estudante> estudantes=new HashSet<>();
+
+    @OneToMany(mappedBy = "curso",cascade = CascadeType.PERSIST)
+    @JsonManagedReference
+    private Set<Explicador> explicadors=new HashSet<>();
+
     public Curso(String nome){
         this.nome = nome;
     }
@@ -41,7 +49,18 @@ public class Curso {
         cadeira.setCurso(this);
     }
 
+    public void addEstudante(Estudante estudante){
+        this.estudantes.add(estudante);
+        estudante.setCurso(this);
+    }
+
+    public void addExplicador(Explicador explicador){
+        this.explicadors.add(explicador);
+        explicador.setCurso(this);
+    }
+
     public void setFaculdade(Faculdade faculdade) {
         this.faculdade = faculdade;
     }
+
 }

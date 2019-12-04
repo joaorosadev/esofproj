@@ -22,7 +22,7 @@ public class Explicador {
     private String nome;
 
     @OneToMany(mappedBy = "explicador",cascade = CascadeType.PERSIST)
-    @JsonManagedReference
+    @JsonManagedReference(value="secondParent")
     private Set<Cadeira> cadeiras=new HashSet<>();
 
     @OneToMany(mappedBy = "explicador",cascade = CascadeType.PERSIST)
@@ -32,6 +32,12 @@ public class Explicador {
     @OneToMany(mappedBy = "explicador",cascade = CascadeType.PERSIST)
     @JsonManagedReference
     private Set<Explicacao> explicacoes=new HashSet<>();
+
+    @ManyToOne
+    @ToString.Exclude
+    @EqualsAndHashCode.Exclude
+    @JsonBackReference
+    private Curso curso;
 
     public Explicador(String nome){
         this.nome = nome;
@@ -51,4 +57,6 @@ public class Explicador {
         this.explicacoes.add(exp);
         exp.setExplicador(this);
     }
+
+    public void setCurso(Curso curso){this.curso = curso;}
 }

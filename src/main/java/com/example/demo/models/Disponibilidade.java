@@ -8,6 +8,8 @@ import lombok.ToString;
 
 import javax.persistence.*;
 import java.time.DayOfWeek;
+import java.time.LocalDate;
+import java.time.LocalTime;
 
 @Data
 @Entity
@@ -18,8 +20,7 @@ public class Disponibilidade {
     private Long id;
 
     private DayOfWeek dia;
-    private int horaDeInicio;
-    private int horaDeFim;
+    LocalTime horaIn, horaFim;
 
     @ManyToOne
     @ToString.Exclude
@@ -27,10 +28,10 @@ public class Disponibilidade {
     @JsonBackReference
     private Explicador explicador;
 
-    public Disponibilidade(DayOfWeek dia, int horaDeInicio, int horaDeFim){
+    public Disponibilidade(DayOfWeek dia, LocalTime horaIn, LocalTime horaFim){
         this.dia = dia;
-        this.horaDeInicio = horaDeInicio;
-        this.horaDeFim = horaDeFim;
+        this.horaIn = horaIn;
+        this.horaFim= horaFim;
     }
 
     public void setExplicador(Explicador explicador) {

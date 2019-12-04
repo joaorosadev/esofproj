@@ -28,7 +28,7 @@ public class Explicacao {
     @ManyToOne
     @ToString.Exclude
     @EqualsAndHashCode.Exclude
-    @JsonBackReference
+    @JsonBackReference(value = "secondParent")
     private Estudante estudante;
 
     public void setExplicador(Explicador explicador) {
