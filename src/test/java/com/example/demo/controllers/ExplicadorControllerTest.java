@@ -9,6 +9,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 
 import java.util.HashSet;
@@ -17,6 +18,7 @@ import java.util.Optional;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @WebMvcTest(controllers = ExplicadorController.class)
@@ -70,7 +72,30 @@ class ExplicadorControllerTest {
     }
 
     @Test
-    void createExplicador() {
+    void createExplicador() throws Exception {
+        Explicador explicador1 = new Explicador("Explicador1");
+
+        String jsonRequest = this.objectMapper.writeValueAsString(explicador1);
+
+        when(this.explicadorService.createExplicador(explicador1)).thenReturn(Optional.of(explicador1));
+
+        this.mockMvc.perform(
+                post("/explicador").contentType(MediaType.APPLICATION_JSON).content(jsonRequest)
+        ).andExpect(
+               status().isOk()
+        );
+
+        Explicador existingExplicador = new Explicador("Explicador2");
+
+        when(this.explicadorService.findByNome("Explicador2")).thenReturn(Optional.of(existingExplicador));
+
+        String existingExplicadorJson=this.objectMapper.writeValueAsString(existingExplicador);
+
+        this.mockMvc.perform(
+                post("/explicador").contentType(MediaType.APPLICATION_JSON).content(existingExplicadorJson)
+        ).andExpect(
+                status().isBadRequest()
+        );
     }
 
     @Test
