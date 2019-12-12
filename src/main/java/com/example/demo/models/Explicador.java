@@ -20,6 +20,7 @@ public class Explicador {
     private Long id;
 
     private String nome;
+    private String password;
 
     @OneToMany(mappedBy = "explicador",cascade = CascadeType.PERSIST)
     @JsonManagedReference(value="secondParent")
@@ -39,8 +40,9 @@ public class Explicador {
     @JsonBackReference
     private Curso curso;
 
-    public Explicador(String nome){
+    public Explicador(String nome, String password){
         this.nome = nome;
+        this.password = password;
     }
 
     public void addCadeira(Cadeira cadeira){

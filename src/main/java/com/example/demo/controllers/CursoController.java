@@ -22,6 +22,13 @@ public class CursoController {
     @Autowired
     private CursoService cursoService;
 
+    @RequestMapping(method = RequestMethod.GET)
+    public ResponseEntity<Iterable<Curso>> getAllCursos(){
+        this.logger.info("Received a get request");
+
+        return ResponseEntity.ok(this.cursoService.findAll());
+    }
+
     //3
     @PostMapping(value="/{faculdade}",produces = MediaType.APPLICATION_JSON_VALUE,consumes = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Curso> createCurso(@RequestBody Curso curso, @PathVariable("faculdade") String faculdadeNome){

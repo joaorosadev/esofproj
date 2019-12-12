@@ -12,7 +12,7 @@ class EstudanteTest {
 
     @Test
     void addExplicacao() {
-        Estudante estudante = new Estudante("Fernandina");
+        Estudante estudante = new Estudante("Fernandina","estranho");
         Explicacao explicacao = new Explicacao();
 
         assertEquals(0,estudante.getExplicacoes().size());
@@ -22,8 +22,8 @@ class EstudanteTest {
 
     @Test
     void marcarExplicacao() {
-        Estudante estudante = new Estudante("António");
-        Explicador explicador = new Explicador("Fábio");
+        Estudante estudante = new Estudante("António","123321");
+        Explicador explicador = new Explicador("Fábio","321");
         Cadeira cadeira = new Cadeira("LP");
         LocalTime hmIn = LocalTime.of(12,0), hmFim = LocalTime.of(14,0);
         Disponibilidade disp = new Disponibilidade(DayOfWeek.FRIDAY,hmIn,hmFim);

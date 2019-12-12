@@ -8,7 +8,9 @@ import com.example.demo.repositories.FaculdadeRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.HashSet;
 import java.util.Optional;
+import java.util.Set;
 
 @Service
 public class CursoService {
@@ -27,6 +29,14 @@ public class CursoService {
             return Optional.of(this.cursoRepo.save(curso));
         } else
             return Optional.empty();
+    }
+
+    public Set<Curso> findAll() {
+        Set<Curso> cursos = new HashSet<>();
+        for(Curso curso: this.cursoRepo.findAll()){
+            cursos.add(curso);
+        }
+        return cursos;
     }
 
     public Optional<Curso> findByNome(String nome){

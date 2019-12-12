@@ -19,7 +19,7 @@ class CadeiraTest {
     @Test
     void setExplicador() {
         Cadeira cadeira = new Cadeira("LP");
-        Explicador explicador = new Explicador("Zé");
+        Explicador explicador = new Explicador("Zé","123");
 
         cadeira.setExplicador(explicador);
 

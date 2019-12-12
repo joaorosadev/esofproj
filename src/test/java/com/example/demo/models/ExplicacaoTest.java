@@ -9,7 +9,7 @@ class ExplicacaoTest {
     @Test
     void setExplicador() {
         Explicacao explicacao = new Explicacao();
-        Explicador explicador = new Explicador("Lelo");
+        Explicador explicador = new Explicador("Lelo","123");
 
         assertNull(explicacao.getExplicador());
         explicacao.setExplicador(explicador);
@@ -19,7 +19,7 @@ class ExplicacaoTest {
     @Test
     void setEstudante() {
         Explicacao explicacao = new Explicacao();
-        Estudante estudante = new Estudante("Tó");
+        Estudante estudante = new Estudante("Tó","toze");
 
         assertNull(explicacao.getEstudante());
         explicacao.setEstudante(estudante);

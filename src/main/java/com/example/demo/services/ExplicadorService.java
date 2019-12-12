@@ -4,10 +4,13 @@ import com.example.demo.models.Curso;
 import com.example.demo.models.Disponibilidade;
 import com.example.demo.models.Explicador;
 import com.example.demo.repositories.ExplicadorRepo;
+import com.example.demo.services.filters.FilterExplicadorService;
+import com.example.demo.services.filters.FilterObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.HashSet;
+import java.util.Map;
 import java.util.Optional;
 import java.util.Set;
 
@@ -16,6 +19,9 @@ public class ExplicadorService {
 
     @Autowired
     private ExplicadorRepo explicadorRepo;
+
+    private FilterExplicadorService filterExplicadorService;
+
 
     @Autowired
     private CursoService cursoService;
@@ -38,17 +44,27 @@ public class ExplicadorService {
             return Optional.empty();
     }
 
-    //Should the Explicador be saved again in the repo?
+    //5 Explicador não aparece no curso?
     public Optional<Explicador> putExplicadorCurso(Explicador explicador, String cursoName){
         Optional<Explicador> optionalExplicador = this.explicadorRepo.findByNome(explicador.getNome());
         Optional<Curso> cursoOptional = this.cursoService.findByNome(cursoName);
         if(optionalExplicador.isPresent() && cursoOptional.isPresent()){
-            explicador.setCurso(cursoOptional.get());
-            return Optional.of(this.explicadorRepo.save(explicador));
+            optionalExplicador.get().setCurso(cursoOptional.get());
+            cursoOptional.get().addExplicador(optionalExplicador.get());
+            return optionalExplicador;
         } else
             return Optional.empty();
     }
-    //???????????????
+
+    //6
+    public Optional<Explicador> putExplicadorDisp(Explicador explicador, Disponibilidade disponibilidade){
+        Optional<Explicador> optionalExplicador = this.explicadorRepo.findByNome(explicador.getNome());
+        if(optionalExplicador.isPresent()){
+            optionalExplicador.get().addDisponibilidade(disponibilidade);
+            return optionalExplicador;
+        }
+        return Optional.empty();
+    }
 
     public Optional <Explicador> searchExplicador(String cursoName, String dia, int horaInicio, int horaFim){
         int diaValue;
@@ -75,6 +91,14 @@ public class ExplicadorService {
             }
         }
         return Optional.empty();
+    }
+
+    public Set<Explicador> filterExplicadores(Map<String, String> searchParams) {
+
+        FilterObject filterObject=new FilterObject(searchParams);
+        Set<Explicador> explicadores = this.findAll();
+
+        return this.filterExplicadorService.filter(explicadores,filterObject);
     }
 
     public Optional<Explicador> findByNome(String nome){

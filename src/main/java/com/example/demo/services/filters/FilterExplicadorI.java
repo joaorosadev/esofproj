@@ -4,6 +4,6 @@ import com.example.demo.models.Explicador;
 
 import java.util.Set;
 
-public interface ExplicadorFilterI {
+public interface FilterExplicadorI {
     Set<Explicador> filter(Set<Explicador> explicadors);
 }

@@ -1,5 +1,6 @@
 package com.example.demo.controllers;
 
+import com.example.demo.models.Disponibilidade;
 import com.example.demo.models.Explicador;
 import com.example.demo.services.ExplicadorService;
 import org.slf4j.Logger;
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.Map;
 import java.util.Optional;
+import java.util.Set;
 
 @Controller
 @RequestMapping("/explicador")
@@ -57,9 +59,8 @@ public class ExplicadorController {
         throw new ExplicadorAlreadyExistsException(explicador.getNome());
     }
 
-    //5 e 6 FALTAM TESTAR NO POSTMAN,para o 5 temos de passar o id
-    //???????????????
-    @PutMapping(value="/put/{curso}",produces = MediaType.APPLICATION_JSON_VALUE,consumes = MediaType.APPLICATION_JSON_VALUE)
+    ////5 Explicador não aparece no curso?
+    @PutMapping(value="/{curso}",produces = MediaType.APPLICATION_JSON_VALUE,consumes = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Explicador> putExplicadorCurso(@RequestBody Explicador explicador,@PathVariable("curso") String cursoName){
         Optional<Explicador> optionalExplicador = this.explicadorService.putExplicadorCurso(explicador,cursoName);
         if(optionalExplicador.isPresent()){
@@ -69,8 +70,18 @@ public class ExplicadorController {
     }
     //??????????????
 
+    //6
+    @PutMapping(produces = MediaType.APPLICATION_JSON_VALUE,consumes = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<Explicador> putExplicadorDisp(@RequestBody Explicador explicador, @RequestBody Disponibilidade disponibilidade){
+        Optional<Explicador> optionalExplicador = this.explicadorService.putExplicadorDisp(explicador,disponibilidade);
+        if(optionalExplicador.isPresent()){
+            return ResponseEntity.ok(optionalExplicador.get());
+        }
+        throw  new ExplicadorNaoExisteException();
+    }
+
     //9 FALTA TESTAR NO POSTMAN
-    @GetMapping(value="/search", produces = MediaType.APPLICATION_JSON_VALUE)
+    /*@GetMapping(value="/search", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Explicador> searchExplicador(@RequestParam Map<String,String> searchParam){
         String cursoName = searchParam.get("curso");
         String diaName = searchParam.get("dia");
@@ -82,6 +93,13 @@ public class ExplicadorController {
             return ResponseEntity.ok(optionalExplicador.get());
         }
         throw new ExplicadorNaoExisteException();
+    }*/
+
+    //http://localhost:8080/explicador/search/curso=Psicologia&dia=quarta&hora_inicio=1400&hora_fim=1600
+    //NOT WORKING-9
+    @GetMapping(value="/search",produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<Set<Explicador>> searchOrders(@RequestParam Map<String,String> searchParams){
+        return ResponseEntity.ok(this.explicadorService.filterExplicadores(searchParams));
     }
 
 

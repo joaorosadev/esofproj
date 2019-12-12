@@ -11,7 +11,7 @@ class ExplicadorTest {
 
     @Test
     void addCadeira() {
-        Explicador explicador = new Explicador("Zé");
+        Explicador explicador = new Explicador("Zé","123");
         Cadeira cadeira = new Cadeira("LP");
 
         assertEquals(0,explicador.getCadeiras().size());
@@ -23,7 +23,7 @@ class ExplicadorTest {
 
     @Test
     void addDisponibilidade() {
-        Explicador explicador = new Explicador("Alves");
+        Explicador explicador = new Explicador("Alves","123");
         LocalTime hmIn = LocalTime.of(15,0), hmFim = LocalTime.of(18,0);
         Disponibilidade disponibilidade = new Disponibilidade(DayOfWeek.WEDNESDAY,hmIn,hmFim);
 
@@ -37,7 +37,7 @@ class ExplicadorTest {
 
     @Test
     void addExplicacao() {
-        Explicador explicador = new Explicador("Alves");
+        Explicador explicador = new Explicador("Alves","123");
         Explicacao explicacao = new Explicacao();
 
         assertEquals(0,explicador.getExplicacoes().size());

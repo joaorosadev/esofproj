@@ -14,7 +14,7 @@ class DisponibilidadeTest {
         LocalTime hmIn = LocalTime.of(12,0), hmFim = LocalTime.of(14,0);
 
         Disponibilidade disponibilidade = new Disponibilidade(DayOfWeek.WEDNESDAY,hmIn,hmFim);
-        Explicador explicador = new Explicador("Roberto");
+        Explicador explicador = new Explicador("Roberto","123");
 
         assertNull(disponibilidade.getExplicador());
         disponibilidade.setExplicador(explicador);

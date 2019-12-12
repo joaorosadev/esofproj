@@ -44,15 +44,15 @@ public class Bootstrap implements ApplicationListener<ContextRefreshedEvent> {
         Cadeira cadeira3 = new Cadeira("Psicometria");
         Cadeira cadeira4 = new Cadeira("Psicologia Forense");
 
-        Explicador exp1 = new Explicador("Fernando");
-        Explicador exp2 = new Explicador("Alberto");
-        Explicador exp3 = new Explicador("Sofia");
-        Explicador exp4 = new Explicador("Maria");
+        Explicador exp1 = new Explicador("Fernando","1234");
+        Explicador exp2 = new Explicador("Alberto","4321");
+        Explicador exp3 = new Explicador("Sofia","12333");
+        Explicador exp4 = new Explicador("Maria","3232");
 
-        Estudante est1 = new Estudante("Ricardo");
-        Estudante est2 = new Estudante("João");
-        Estudante est3 = new Estudante("Sara");
-        Estudante est4 = new Estudante("Alexandra");
+        Estudante est1 = new Estudante("Ricardo","ola");
+        Estudante est2 = new Estudante("João","adeus");
+        Estudante est3 = new Estudante("Sara","sara123");
+        Estudante est4 = new Estudante("Alexandra","alx");
 
         LocalTime hIn = LocalTime.of(14,0), hFim = LocalTime.of(16,0);
         LocalTime hIn2 = LocalTime.of(8,0), hFim2 = LocalTime.of(12,0);
@@ -78,6 +78,7 @@ public class Bootstrap implements ApplicationListener<ContextRefreshedEvent> {
         //Adicionar disponibilidades aos explicadores (para já, apenas duas para um)
         exp1.addDisponibilidade(d1);
         exp1.addDisponibilidade(d2);
+        exp3.addDisponibilidade(d1);
         /*Marcar explicação (Dois estudantes tentam marcar à mesma hora, 1 tenta marcar a meio da
         disponibilidade, 1 tenta marcar na hora de fim da disponibilidade, 1 tenta marcar fora
         da disponibilidade*/

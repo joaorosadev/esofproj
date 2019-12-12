@@ -22,6 +22,7 @@ public class Estudante {
     private Long id;
 
     private String nome;
+    private String password;
 
     @ManyToOne
     @ToString.Exclude
@@ -33,8 +34,9 @@ public class Estudante {
     @JsonManagedReference(value="secondParent")
     private Set<Explicacao> explicacoes=new HashSet<>();
 
-    public Estudante(String nome){
+    public Estudante(String nome,String password){
         this.nome = nome;
+        this.password=password;
     }
 
     public void addExplicacao(Explicacao exp){
