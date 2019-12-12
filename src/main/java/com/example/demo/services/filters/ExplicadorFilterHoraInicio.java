@@ -21,6 +21,7 @@ public class ExplicadorFilterHoraInicio implements FilterExplicadorI {
 
         int hour = Integer.parseInt(horaInicio.substring(0,2));
         int min = Integer.parseInt(horaInicio.substring(2));
+
         Set<Explicador> explicadoresToBeReturned=new HashSet<>();
         for(Explicador exp:explicadors){
             for(Disponibilidade disp: exp.getDisponibilidades()){

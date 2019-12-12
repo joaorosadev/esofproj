@@ -1,9 +1,11 @@
 package com.example.demo.services.filters;
 
 import com.example.demo.models.Explicador;
+import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
+@Service
 public class FilterExplicadorService {
 
     public Set<Explicador> filter(Set<Explicador> explicadors, FilterObject filterObject) {

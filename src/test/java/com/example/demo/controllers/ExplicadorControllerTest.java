@@ -12,8 +12,7 @@ import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 
-import java.util.HashSet;
-import java.util.Optional;
+import java.util.*;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.when;
@@ -103,6 +102,21 @@ class ExplicadorControllerTest {
     }
 
     @Test
-    void searchExplicador() {
+    void searchExplicador() throws Exception {
+        Set<Explicador> explicadores=new HashSet<>();
+        explicadores.add(new Explicador("expl1","12345"));
+        explicadores.add(new Explicador("expl2","12345"));
+        explicadores.add(new Explicador("expl3","12345"));
+        Map<String,String> params=new HashMap<>();
+        params.put("curso","curso1");
+        params.put("dia","segunda");
+
+
+        when(this.explicadorService.filterExplicadores(params)).thenReturn(explicadores);
+
+        String jsonResult=this.mockMvc.perform(get("/explicador/search?curso=curso1&dia=segunda"))
+                .andExpect(status().isOk()).andReturn().getResponse().getContentAsString();
+
+        System.out.println(jsonResult);
     }
 }

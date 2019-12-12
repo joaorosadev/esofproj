@@ -20,6 +20,7 @@ public class ExplicadorService {
     @Autowired
     private ExplicadorRepo explicadorRepo;
 
+    @Autowired
     private FilterExplicadorService filterExplicadorService;
 
 
@@ -51,6 +52,7 @@ public class ExplicadorService {
         if(optionalExplicador.isPresent() && cursoOptional.isPresent()){
             optionalExplicador.get().setCurso(cursoOptional.get());
             cursoOptional.get().addExplicador(optionalExplicador.get());
+            this.cursoService.save(cursoOptional.get());
             return optionalExplicador;
         } else
             return Optional.empty();

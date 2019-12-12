@@ -42,4 +42,8 @@ public class CursoService {
     public Optional<Curso> findByNome(String nome){
         return this.cursoRepo.findByNome(nome);
     }
+
+    public Curso save(Curso curso){
+        return this.cursoRepo.save(curso);
+    }
 }

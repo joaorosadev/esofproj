@@ -80,7 +80,7 @@ public class ExplicadorController {
         throw  new ExplicadorNaoExisteException();
     }
 
-    //9 FALTA TESTAR NO POSTMAN
+    //9
     /*@GetMapping(value="/search", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Explicador> searchExplicador(@RequestParam Map<String,String> searchParam){
         String cursoName = searchParam.get("curso");
@@ -96,7 +96,7 @@ public class ExplicadorController {
     }*/
 
     //http://localhost:8080/explicador/search/curso=Psicologia&dia=quarta&hora_inicio=1400&hora_fim=1600
-    //NOT WORKING-9
+    //9
     @GetMapping(value="/search",produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Set<Explicador>> searchOrders(@RequestParam Map<String,String> searchParams){
         return ResponseEntity.ok(this.explicadorService.filterExplicadores(searchParams));
