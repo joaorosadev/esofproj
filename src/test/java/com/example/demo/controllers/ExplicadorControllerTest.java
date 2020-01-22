@@ -1,9 +1,12 @@
 package com.example.demo.controllers;
 
+import com.example.demo.models.Curso;
 import com.example.demo.models.Explicador;
 import com.example.demo.repositories.ExplicadorRepo;
+import com.example.demo.services.CursoService;
 import com.example.demo.services.ExplicadorService;
 import com.example.demo.services.FaculdadeService;
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,8 +19,7 @@ import java.util.*;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.when;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @WebMvcTest(controllers = ExplicadorController.class)
@@ -28,6 +30,9 @@ class ExplicadorControllerTest {
 
     @MockBean
     private ExplicadorService explicadorService;
+
+    @MockBean
+    private CursoService cursoService;
 
     @Autowired
     private ObjectMapper objectMapper;
@@ -56,8 +61,6 @@ class ExplicadorControllerTest {
         ).andExpect(
                 status().isOk()
         ).andReturn().getResponse().getContentAsString();
-
-        //System.out.println(responseJson);
 
         Explicador responseExplicador=this.objectMapper.readValue(responseJson,Explicador.class);
         responseExplicador.setNome("Exp2");
@@ -98,11 +101,34 @@ class ExplicadorControllerTest {
     }
 
     @Test
-    void putExplicadorCurso() {
+    void putExplicadorCurso() throws Exception {
+        Explicador explicador = new Explicador("José","123");
+        Curso curso = new Curso("Psicologia");
+        curso.addExplicador(explicador);
+
+        when(this.explicadorService.putExplicadorCurso(explicador,curso.getNome())).thenReturn(Optional.of(explicador));
+
+        String jsonRequest = this.objectMapper.writeValueAsString(explicador);
+
+        String responseJson=this.mockMvc.perform(
+          put("/explicador/Psicologia").contentType(MediaType.APPLICATION_JSON).content(jsonRequest)
+        ).andExpect(
+                status().isOk()
+        ).andReturn().getResponse().getContentAsString();
+
+        System.out.println(responseJson);
+
+        this.mockMvc.perform(
+                put("/explicador/Anatomia").contentType(MediaType.APPLICATION_JSON).content(jsonRequest)
+        ).andExpect(
+                status().isBadRequest()
+        );
+
+        assertEquals("Psicologia",explicador.getCurso().getNome());
     }
 
     @Test
-    void searchExplicador() throws Exception {
+    void filterExplicadores() throws Exception {
         Set<Explicador> explicadores=new HashSet<>();
         explicadores.add(new Explicador("expl1","12345"));
         explicadores.add(new Explicador("expl2","12345"));

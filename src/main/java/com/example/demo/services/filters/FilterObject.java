@@ -4,6 +4,7 @@ import lombok.Data;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.time.LocalTime;
 import java.util.Map;
 
 @Data
@@ -28,6 +29,11 @@ public class FilterObject {
         this();
         this.cursoName=searchParams.get("curso");
         this.dia=searchParams.get("dia");
+        try {
+            //LocalTime.parse();
+        }catch(Exception e){
+            e.printStackTrace();
+        }
         this.hora_inicio=searchParams.get("hora_inicio");
         this.hora_fim=searchParams.get("hora_fim");
     }

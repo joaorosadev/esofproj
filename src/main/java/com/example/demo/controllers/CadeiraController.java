@@ -25,8 +25,10 @@ public class CadeiraController {
     //4
     @PostMapping(value="/{curso}",produces = MediaType.APPLICATION_JSON_VALUE,consumes = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Cadeira> createCadeira(@RequestBody Cadeira cadeira, @PathVariable("curso") String cursoNome){
+        logger.info("Received a Post request to /cadeira/{curso}");
         Optional<Cadeira> optionalCadeira = this.cadeiraService.createCadeira(cadeira,cursoNome);
         if(optionalCadeira.isPresent()){
+            logger.info("Course created with success.");
             return ResponseEntity.ok(optionalCadeira.get());
         }
         throw new CadeiraController.CadeiraAlreadyExistsException(cadeira.getNome());
@@ -37,6 +39,7 @@ public class CadeiraController {
 
         public CadeiraAlreadyExistsException(String name) {
             super("O cadeira com nome: "+name+" já existe.");
+            logger.error("Post request failed.");
         }
     }
 }

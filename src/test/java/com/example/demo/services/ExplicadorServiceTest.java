@@ -3,9 +3,7 @@ package com.example.demo.services;
 import com.example.demo.models.Disponibilidade;
 import com.example.demo.models.Explicador;
 import com.example.demo.repositories.ExplicadorRepo;
-import com.example.demo.services.filters.FilterExplicadorService;
 import org.junit.jupiter.api.Test;
-import org.mockito.Mock;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
@@ -26,32 +24,23 @@ class ExplicadorServiceTest {
     @MockBean
     private ExplicadorRepo explicadorRepo;
 
-    @MockBean
-    private CursoService cursoService;
-
     @Autowired
     private ExplicadorService explicadorService;
 
-    @Autowired
-    private FilterExplicadorService filterExplicadorService;
-
     @Test
-    void searchExplicador() {
+    void filterExplicadores() {
 
-        Set<Explicador> explicadors=new HashSet<>();
+        Set<Explicador> explicadores=new HashSet<>();
         Explicador explicador=new Explicador();
         explicador.addDisponibilidade(new Disponibilidade(DayOfWeek.MONDAY, LocalTime.of(8,0),LocalTime.of(
         10,0)));
 
-        explicadors.add(explicador);
+        explicadores.add(explicador);
 
-
-
-        when(this.explicadorRepo.findAll()).thenReturn(explicadors);
+        when(this.explicadorRepo.findAll()).thenReturn(explicadores);
 
         Map<String,String> params=new HashMap<>();
         params.put("dia","segunda");
-
 
         assertEquals(1,this.explicadorService.filterExplicadores(params).size());
 

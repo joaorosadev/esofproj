@@ -3,7 +3,9 @@ package com.example.demo.services;
 import com.example.demo.models.Curso;
 import com.example.demo.models.Disponibilidade;
 import com.example.demo.models.Explicador;
+import com.example.demo.repositories.DisponibilidadeRepo;
 import com.example.demo.repositories.ExplicadorRepo;
+import com.example.demo.repositories.FaculdadeRepo;
 import com.example.demo.services.filters.FilterExplicadorService;
 import com.example.demo.services.filters.FilterObject;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,13 +21,17 @@ public class ExplicadorService {
 
     @Autowired
     private ExplicadorRepo explicadorRepo;
+    @Autowired
+    private FaculdadeRepo faculdadeRepo;
 
     @Autowired
     private FilterExplicadorService filterExplicadorService;
 
-
     @Autowired
     private CursoService cursoService;
+
+    @Autowired
+    private DisponibilidadeRepo disponibilidadeRepo;
 
     public Set<Explicador> findAll() {
         Set<Explicador> explicadores = new HashSet<>();
@@ -35,8 +41,7 @@ public class ExplicadorService {
         return explicadores;
     }
 
-    public Optional<Explicador> findById(Long id) { return this.explicadorRepo.findById(id); }
-
+    //1
     public Optional<Explicador> createExplicador(Explicador explicador) {
         Optional<Explicador> optionalExplicador = this.explicadorRepo.findByNome(explicador.getNome());
         if(!optionalExplicador.isPresent()){
@@ -45,7 +50,7 @@ public class ExplicadorService {
             return Optional.empty();
     }
 
-    //5 Explicador não aparece no curso?
+    //5
     public Optional<Explicador> putExplicadorCurso(Explicador explicador, String cursoName){
         Optional<Explicador> optionalExplicador = this.explicadorRepo.findByNome(explicador.getNome());
         Optional<Curso> cursoOptional = this.cursoService.findByNome(cursoName);
@@ -59,38 +64,24 @@ public class ExplicadorService {
     }
 
     //6
-    public Optional<Explicador> putExplicadorDisp(Explicador explicador, Disponibilidade disponibilidade){
+    public Optional<Explicador> putExplicadorDisp(Explicador explicador){
         Optional<Explicador> optionalExplicador = this.explicadorRepo.findByNome(explicador.getNome());
         if(optionalExplicador.isPresent()){
-            optionalExplicador.get().addDisponibilidade(disponibilidade);
-            return optionalExplicador;
-        }
-        return Optional.empty();
-    }
+           Explicador explicadorExisting=optionalExplicador.get();
+            System.out.println(explicador);
 
-    public Optional <Explicador> searchExplicador(String cursoName, String dia, int horaInicio, int horaFim){
-        int diaValue;
-        switch(dia){
-            case "domingo" : diaValue = 0; break;
-            case "segunda": diaValue = 1; break;
-            case "terca": diaValue = 2; break;
-            case "quarta": diaValue = 3; break;
-            case "quinta": diaValue = 4; break;
-            case "sexta": diaValue = 5; break;
-            case "sabado": diaValue = 6; break;
-            default: diaValue = -1; break;
-        }
+            Set<Disponibilidade> disponibilidades=explicadorExisting.getDisponibilidades();
+            explicadorExisting.getDisponibilidades().clear();
 
-        for(Explicador explicador: this.explicadorRepo.findAll()){
-            for(Disponibilidade disponibilidade: explicador.getDisponibilidades()){
-
-                if(disponibilidade.getDia().getValue() == diaValue
-                && disponibilidade.getHoraIn().getHour() == horaInicio
-                && disponibilidade.getHoraFim().getHour() == horaFim
-                && explicador.getCurso().getNome() == cursoName){
-                    return Optional.of(disponibilidade.getExplicador());
-                }
-            }
+           for(Disponibilidade disponibilidade:disponibilidades){
+               disponibilidade.setExplicador(null);
+               this.disponibilidadeRepo.delete(disponibilidade);
+           }
+           for(Disponibilidade disponibilidade: explicador.getDisponibilidades()){
+                System.out.println(disponibilidade);
+                explicadorExisting.addDisponibilidade(new Disponibilidade(disponibilidade));
+           }
+           return Optional.of(this.explicadorRepo.save(explicadorExisting));
         }
         return Optional.empty();
     }

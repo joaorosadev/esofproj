@@ -26,11 +26,12 @@ public class Explicador {
     @JsonManagedReference(value="secondParent")
     private Set<Cadeira> cadeiras=new HashSet<>();
 
-    @OneToMany(mappedBy = "explicador",cascade = CascadeType.PERSIST)
+    //@OneToMany(mappedBy = "explicador",cascade = {CascadeType.ALL})
+    @OneToMany(mappedBy = "explicador",cascade = {CascadeType.PERSIST,CascadeType.MERGE},orphanRemoval = true)
     @JsonManagedReference
     private Set<Disponibilidade> disponibilidades=new HashSet<>();
 
-    @OneToMany(mappedBy = "explicador",cascade = CascadeType.PERSIST)
+    @OneToMany(mappedBy = "explicador",cascade = CascadeType.ALL)
     @JsonManagedReference
     private Set<Explicacao> explicacoes=new HashSet<>();
 
@@ -39,6 +40,14 @@ public class Explicador {
     @EqualsAndHashCode.Exclude
     @JsonBackReference
     private Curso curso;
+
+    //ADDED
+    @ManyToOne
+    @ToString.Exclude
+    @EqualsAndHashCode.Exclude
+    @JsonBackReference(value = "bigParent")
+    private Faculdade faculdade;
+
 
     public Explicador(String nome, String password){
         this.nome = nome;
