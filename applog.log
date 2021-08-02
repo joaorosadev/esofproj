@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 2020-01-12 12:38:30.954  INFO 16372 --- [main] c.e.d.controllers.CadeiraControllerTest  : Starting CadeiraControllerTest on DESKTOP-L0NO9V0 with PID 16372 (started by Asus´ in C:\Users\Asus´\Desktop\Docs\pastagit\esofproj)
 2020-01-12 12:38:30.957  INFO 16372 --- [main] c.e.d.controllers.CadeiraControllerTest  : No active profile set, falling back to default profiles: default
 2020-01-12 12:38:40.737  INFO 16372 --- [main] c.e.d.controllers.CadeiraControllerTest  : Started CadeiraControllerTest in 11.862 seconds (JVM running for 20.715)
@@ -130,3 +131,137 @@
 2020-01-12 16:17:02.148  INFO 11964 --- [main] com.example.demo.Bootstrap               : Startup
 2020-01-12 16:17:02.176  INFO 11964 --- [main] c.e.demo.services.ExplicadorServiceTest  : Started ExplicadorServiceTest in 1.714 seconds (JVM running for 19.049)
 2020-01-12 16:17:02.380 ERROR 11964 --- [SpringContextShutdownHook] .SchemaDropperImpl$DelayedDropActionImpl : HHH000478: Unsuccessful: drop table explicacao if exists
+=======
+2020-01-12 12:38:30.954  INFO 16372 --- [main] c.e.d.controllers.CadeiraControllerTest  : Starting CadeiraControllerTest on DESKTOP-L0NO9V0 with PID 16372 (started by Asus´ in C:\Users\Asus´\Desktop\Docs\pastagit\esofproj)
+2020-01-12 12:38:30.957  INFO 16372 --- [main] c.e.d.controllers.CadeiraControllerTest  : No active profile set, falling back to default profiles: default
+2020-01-12 12:38:40.737  INFO 16372 --- [main] c.e.d.controllers.CadeiraControllerTest  : Started CadeiraControllerTest in 11.862 seconds (JVM running for 20.715)
+2020-01-12 12:38:41.451  INFO 16372 --- [main] c.e.demo.controllers.CadeiraController   : Received a Post request to /cadeira/{curso}
+2020-01-12 12:38:41.486  INFO 16372 --- [main] c.e.demo.controllers.CadeiraController   : Course created with success.
+2020-01-12 12:43:24.402  INFO 19556 --- [main] c.e.d.c.ExplicacaoControllerTest         : Starting ExplicacaoControllerTest on DESKTOP-L0NO9V0 with PID 19556 (started by Asus´ in C:\Users\Asus´\Desktop\Docs\pastagit\esofproj)
+2020-01-12 12:43:24.406  INFO 19556 --- [main] c.e.d.c.ExplicacaoControllerTest         : No active profile set, falling back to default profiles: default
+2020-01-12 12:43:26.709  INFO 19556 --- [main] c.e.d.c.ExplicacaoControllerTest         : Started ExplicacaoControllerTest in 3.186 seconds (JVM running for 5.039)
+2020-01-12 12:43:26.971  INFO 19556 --- [main] c.e.d.controllers.ExplicacaoController   : Received a Post request.
+2020-01-12 12:43:26.976  INFO 19556 --- [main] c.e.d.controllers.ExplicacaoController   : Meeting created successfully.
+2020-01-12 12:47:50.124  INFO 13452 --- [main] c.e.d.controllers.CursoControllerTest    : Starting CursoControllerTest on DESKTOP-L0NO9V0 with PID 13452 (started by Asus´ in C:\Users\Asus´\Desktop\Docs\pastagit\esofproj)
+2020-01-12 12:47:50.132  INFO 13452 --- [main] c.e.d.controllers.CursoControllerTest    : No active profile set, falling back to default profiles: default
+2020-01-12 12:47:52.804  INFO 13452 --- [main] c.e.d.controllers.CursoControllerTest    : Started CursoControllerTest in 3.492 seconds (JVM running for 5.339)
+2020-01-12 12:47:53.100  INFO 13452 --- [main] c.e.demo.controllers.CursoController     : Received a Post request.
+2020-01-12 12:47:53.107 ERROR 13452 --- [main] c.e.demo.controllers.CursoController     : Post request failed.
+2020-01-12 12:48:56.832  INFO 8244 --- [main] c.e.d.controllers.CursoControllerTest    : Starting CursoControllerTest on DESKTOP-L0NO9V0 with PID 8244 (started by Asus´ in C:\Users\Asus´\Desktop\Docs\pastagit\esofproj)
+2020-01-12 12:48:56.868  INFO 8244 --- [main] c.e.d.controllers.CursoControllerTest    : No active profile set, falling back to default profiles: default
+2020-01-12 12:48:59.050  INFO 8244 --- [main] c.e.d.controllers.CursoControllerTest    : Started CursoControllerTest in 3.104 seconds (JVM running for 5.034)
+2020-01-12 12:48:59.334  INFO 8244 --- [main] c.e.demo.controllers.CursoController     : Received a Post request.
+2020-01-12 12:48:59.337  INFO 8244 --- [main] c.e.demo.controllers.CursoController     : Degree created with success.
+2020-01-12 12:48:59.359  INFO 8244 --- [main] c.e.demo.controllers.CursoController     : Received a Post request.
+2020-01-12 12:48:59.364 ERROR 8244 --- [main] c.e.demo.controllers.CursoController     : Post request failed.
+2020-01-12 12:50:35.475  INFO 22440 --- [main] c.e.d.controllers.CursoControllerTest    : Starting CursoControllerTest on DESKTOP-L0NO9V0 with PID 22440 (started by Asus´ in C:\Users\Asus´\Desktop\Docs\pastagit\esofproj)
+2020-01-12 12:50:35.477  INFO 22440 --- [main] c.e.d.controllers.CursoControllerTest    : No active profile set, falling back to default profiles: default
+2020-01-12 12:50:37.810  INFO 22440 --- [main] c.e.d.controllers.CursoControllerTest    : Started CursoControllerTest in 3.098 seconds (JVM running for 4.842)
+2020-01-12 12:50:37.921  INFO 22440 --- [main] c.e.demo.controllers.CursoController     : Received a get request
+2020-01-12 12:52:18.506  INFO 20016 --- [main] com.example.demo.DemoApplicationTests    : Starting DemoApplicationTests on DESKTOP-L0NO9V0 with PID 20016 (started by Asus´ in C:\Users\Asus´\Desktop\Docs\pastagit\esofproj)
+2020-01-12 12:52:18.511  INFO 20016 --- [main] com.example.demo.DemoApplicationTests    : No active profile set, falling back to default profiles: default
+2020-01-12 12:52:33.507  INFO 20016 --- [main] com.example.demo.Bootstrap               : Startup
+2020-01-12 12:52:33.663  INFO 20016 --- [main] com.example.demo.DemoApplicationTests    : Started DemoApplicationTests in 15.854 seconds (JVM running for 18.102)
+2020-01-12 12:52:33.916  INFO 20016 --- [main] c.e.d.controllers.CursoControllerTest    : Starting CursoControllerTest on DESKTOP-L0NO9V0 with PID 20016 (started by Asus´ in C:\Users\Asus´\Desktop\Docs\pastagit\esofproj)
+2020-01-12 12:52:33.917  INFO 20016 --- [main] c.e.d.controllers.CursoControllerTest    : No active profile set, falling back to default profiles: default
+2020-01-12 12:52:34.534  INFO 20016 --- [main] c.e.d.controllers.CursoControllerTest    : Started CursoControllerTest in 0.653 seconds (JVM running for 18.974)
+2020-01-12 12:52:34.632  INFO 20016 --- [main] c.e.demo.controllers.CursoController     : Received a get request
+2020-01-12 12:52:34.918  INFO 20016 --- [main] c.e.demo.controllers.CursoController     : Received a Post request.
+2020-01-12 12:52:34.919  INFO 20016 --- [main] c.e.demo.controllers.CursoController     : Degree created with success.
+2020-01-12 12:52:34.923  INFO 20016 --- [main] c.e.demo.controllers.CursoController     : Received a Post request.
+2020-01-12 12:52:34.924 ERROR 20016 --- [main] c.e.demo.controllers.CursoController     : Post request failed.
+2020-01-12 12:52:35.002  INFO 20016 --- [main] c.e.d.controllers.CadeiraControllerTest  : Starting CadeiraControllerTest on DESKTOP-L0NO9V0 with PID 20016 (started by Asus´ in C:\Users\Asus´\Desktop\Docs\pastagit\esofproj)
+2020-01-12 12:52:35.006  INFO 20016 --- [main] c.e.d.controllers.CadeiraControllerTest  : No active profile set, falling back to default profiles: default
+2020-01-12 12:52:35.546  INFO 20016 --- [main] c.e.d.controllers.CadeiraControllerTest  : Started CadeiraControllerTest in 0.578 seconds (JVM running for 19.986)
+2020-01-12 12:52:35.565  INFO 20016 --- [main] c.e.demo.controllers.CadeiraController   : Received a Post request to /cadeira/{curso}
+2020-01-12 12:52:35.566  INFO 20016 --- [main] c.e.demo.controllers.CadeiraController   : Course created with success.
+2020-01-12 12:52:35.632  INFO 20016 --- [main] c.e.demo.services.ExplicadorServiceTest  : Starting ExplicadorServiceTest on DESKTOP-L0NO9V0 with PID 20016 (started by Asus´ in C:\Users\Asus´\Desktop\Docs\pastagit\esofproj)
+2020-01-12 12:52:35.632  INFO 20016 --- [main] c.e.demo.services.ExplicadorServiceTest  : No active profile set, falling back to default profiles: default
+2020-01-12 12:52:37.005  INFO 20016 --- [main] com.example.demo.Bootstrap               : Startup
+2020-01-12 12:52:37.040  INFO 20016 --- [main] c.e.demo.services.ExplicadorServiceTest  : Started ExplicadorServiceTest in 1.435 seconds (JVM running for 21.479)
+2020-01-12 12:52:37.138  INFO 20016 --- [main] c.e.d.c.ExplicacaoControllerTest         : Starting ExplicacaoControllerTest on DESKTOP-L0NO9V0 with PID 20016 (started by Asus´ in C:\Users\Asus´\Desktop\Docs\pastagit\esofproj)
+2020-01-12 12:52:37.141  INFO 20016 --- [main] c.e.d.c.ExplicacaoControllerTest         : No active profile set, falling back to default profiles: default
+2020-01-12 12:52:37.681  INFO 20016 --- [main] c.e.d.c.ExplicacaoControllerTest         : Started ExplicacaoControllerTest in 0.601 seconds (JVM running for 22.121)
+2020-01-12 12:52:37.705  INFO 20016 --- [main] c.e.d.controllers.ExplicacaoController   : Received a Post request.
+2020-01-12 12:52:37.705  INFO 20016 --- [main] c.e.d.controllers.ExplicacaoController   : Meeting created successfully.
+2020-01-12 12:52:37.758  INFO 20016 --- [main] c.e.d.c.ExplicadorControllerTest         : Starting ExplicadorControllerTest on DESKTOP-L0NO9V0 with PID 20016 (started by Asus´ in C:\Users\Asus´\Desktop\Docs\pastagit\esofproj)
+2020-01-12 12:52:37.760  INFO 20016 --- [main] c.e.d.c.ExplicadorControllerTest         : No active profile set, falling back to default profiles: default
+2020-01-12 12:52:38.270  INFO 20016 --- [main] c.e.d.c.ExplicadorControllerTest         : Started ExplicadorControllerTest in 0.546 seconds (JVM running for 22.709)
+2020-01-12 12:52:38.281  INFO 20016 --- [main] c.e.d.controllers.ExplicadorController   : Received a Get request.
+2020-01-12 12:52:38.302  INFO 20016 --- [main] c.e.d.controllers.ExplicadorController   : Received a post request.
+2020-01-12 12:52:38.304  INFO 20016 --- [main] c.e.d.controllers.ExplicadorController   : Explainer created and associated with degree successfully.
+2020-01-12 12:52:38.313  INFO 20016 --- [main] c.e.d.controllers.ExplicadorController   : Received a post request.
+2020-01-12 12:52:38.328  INFO 20016 --- [main] c.e.d.controllers.ExplicadorController   : Received a post request.
+2020-01-12 12:52:38.329  INFO 20016 --- [main] c.e.d.controllers.ExplicadorController   : Explainer created with success.
+2020-01-12 12:52:38.332  INFO 20016 --- [main] c.e.d.controllers.ExplicadorController   : Received a post request.
+2020-01-12 12:52:38.341  INFO 20016 --- [main] c.e.d.controllers.ExplicadorController   : Received a get request
+2020-01-12 12:52:38.355  INFO 20016 --- [main] c.e.d.controllers.ExplicadorController   : Received a get request
+2020-01-12 12:52:38.362  INFO 20016 --- [main] c.e.d.controllers.ExplicadorController   : Received a get request
+2020-01-12 12:52:38.403  INFO 20016 --- [main] c.e.d.c.FaculdadeControllerTest          : Starting FaculdadeControllerTest on DESKTOP-L0NO9V0 with PID 20016 (started by Asus´ in C:\Users\Asus´\Desktop\Docs\pastagit\esofproj)
+2020-01-12 12:52:38.404  INFO 20016 --- [main] c.e.d.c.FaculdadeControllerTest          : No active profile set, falling back to default profiles: default
+2020-01-12 12:52:39.032  INFO 20016 --- [main] c.e.d.c.FaculdadeControllerTest          : Started FaculdadeControllerTest in 0.656 seconds (JVM running for 23.471)
+2020-01-12 12:52:39.040  INFO 20016 --- [main] c.e.d.controllers.FaculdadeController    : Received a get request
+2020-01-12 12:52:39.064  INFO 20016 --- [main] c.e.d.controllers.FaculdadeController    : Received a Get request.
+2020-01-12 12:52:39.065  INFO 20016 --- [main] c.e.d.controllers.FaculdadeController    : College created successfully.
+2020-01-12 12:52:39.067  INFO 20016 --- [main] c.e.d.controllers.FaculdadeController    : Received a Get request.
+2020-01-12 12:53:03.844  INFO 19864 --- [restartedMain] com.example.demo.DemoApplication         : Starting DemoApplication on DESKTOP-L0NO9V0 with PID 19864 (started by Asus´ in C:\Users\Asus´\Desktop\Docs\pastagit\esofproj)
+2020-01-12 12:53:03.847  INFO 19864 --- [restartedMain] com.example.demo.DemoApplication         : No active profile set, falling back to default profiles: default
+2020-01-12 12:53:12.235  INFO 19864 --- [restartedMain] com.example.demo.Bootstrap               : Startup
+2020-01-12 12:53:12.454  INFO 19864 --- [restartedMain] com.example.demo.DemoApplication         : Started DemoApplication in 9.774 seconds (JVM running for 12.262)
+2020-01-12 12:53:20.829  INFO 19864 --- [http-nio-8080-exec-1] c.e.d.controllers.ExplicadorController   : Received a get request
+2020-01-12 12:53:26.704  INFO 19864 --- [http-nio-8080-exec-2] c.e.d.controllers.ExplicadorController   : Received a get request
+2020-01-12 16:16:24.668  INFO 19864 --- [restartedMain] com.example.demo.DemoApplication         : Starting DemoApplication on DESKTOP-L0NO9V0 with PID 19864 (started by Asus´ in C:\Users\Asus´\Desktop\Docs\pastagit\esofproj)
+2020-01-12 16:16:24.669  INFO 19864 --- [restartedMain] com.example.demo.DemoApplication         : No active profile set, falling back to default profiles: default
+2020-01-12 16:16:25.244  INFO 19864 --- [restartedMain] com.example.demo.DemoApplication         : Started DemoApplication in 0.602 seconds (JVM running for 12205.051)
+2020-01-12 16:16:37.663  INFO 19864 --- [restartedMain] com.example.demo.DemoApplication         : Starting DemoApplication on DESKTOP-L0NO9V0 with PID 19864 (started by Asus´ in C:\Users\Asus´\Desktop\Docs\pastagit\esofproj)
+2020-01-12 16:16:37.665  INFO 19864 --- [restartedMain] com.example.demo.DemoApplication         : No active profile set, falling back to default profiles: default
+2020-01-12 16:16:38.657  INFO 19864 --- [restartedMain] com.example.demo.Bootstrap               : Startup
+2020-01-12 16:16:38.685  INFO 19864 --- [restartedMain] com.example.demo.DemoApplication         : Started DemoApplication in 1.062 seconds (JVM running for 12218.492)
+2020-01-12 16:16:48.352  INFO 11964 --- [main] c.e.d.controllers.CadeiraControllerTest  : Starting CadeiraControllerTest on DESKTOP-L0NO9V0 with PID 11964 (started by Asus� in C:\Users\Asus�\Desktop\Docs\pastagit\esofproj)
+2020-01-12 16:16:48.357  INFO 11964 --- [main] c.e.d.controllers.CadeiraControllerTest  : No active profile set, falling back to default profiles: default
+2020-01-12 16:16:51.468  INFO 11964 --- [main] c.e.d.controllers.CadeiraControllerTest  : Started CadeiraControllerTest in 3.815 seconds (JVM running for 8.34)
+2020-01-12 16:16:51.836  INFO 11964 --- [main] c.e.demo.controllers.CadeiraController   : Received a Post request to /cadeira/{curso}
+2020-01-12 16:16:51.840  INFO 11964 --- [main] c.e.demo.controllers.CadeiraController   : Course created with success.
+2020-01-12 16:16:51.936  INFO 11964 --- [main] c.e.d.controllers.CursoControllerTest    : Starting CursoControllerTest on DESKTOP-L0NO9V0 with PID 11964 (started by Asus� in C:\Users\Asus�\Desktop\Docs\pastagit\esofproj)
+2020-01-12 16:16:51.940  INFO 11964 --- [main] c.e.d.controllers.CursoControllerTest    : No active profile set, falling back to default profiles: default
+2020-01-12 16:16:52.714  INFO 11964 --- [main] c.e.d.controllers.CursoControllerTest    : Started CursoControllerTest in 0.813 seconds (JVM running for 9.586)
+2020-01-12 16:16:52.723  INFO 11964 --- [main] c.e.demo.controllers.CursoController     : Received a get request
+2020-01-12 16:16:52.752  INFO 11964 --- [main] c.e.demo.controllers.CursoController     : Received a Post request.
+2020-01-12 16:16:52.752  INFO 11964 --- [main] c.e.demo.controllers.CursoController     : Degree created with success.
+2020-01-12 16:16:52.759  INFO 11964 --- [main] c.e.demo.controllers.CursoController     : Received a Post request.
+2020-01-12 16:16:52.769 ERROR 11964 --- [main] c.e.demo.controllers.CursoController     : Post request failed.
+2020-01-12 16:16:52.856  INFO 11964 --- [main] c.e.d.c.ExplicacaoControllerTest         : Starting ExplicacaoControllerTest on DESKTOP-L0NO9V0 with PID 11964 (started by Asus� in C:\Users\Asus�\Desktop\Docs\pastagit\esofproj)
+2020-01-12 16:16:52.857  INFO 11964 --- [main] c.e.d.c.ExplicacaoControllerTest         : No active profile set, falling back to default profiles: default
+2020-01-12 16:16:53.526  INFO 11964 --- [main] c.e.d.c.ExplicacaoControllerTest         : Started ExplicacaoControllerTest in 0.695 seconds (JVM running for 10.398)
+2020-01-12 16:16:53.559  INFO 11964 --- [main] c.e.d.controllers.ExplicacaoController   : Received a Post request.
+2020-01-12 16:16:53.559  INFO 11964 --- [main] c.e.d.controllers.ExplicacaoController   : Meeting created successfully.
+2020-01-12 16:16:53.613  INFO 11964 --- [main] c.e.d.c.ExplicadorControllerTest         : Starting ExplicadorControllerTest on DESKTOP-L0NO9V0 with PID 11964 (started by Asus� in C:\Users\Asus�\Desktop\Docs\pastagit\esofproj)
+2020-01-12 16:16:53.614  INFO 11964 --- [main] c.e.d.c.ExplicadorControllerTest         : No active profile set, falling back to default profiles: default
+2020-01-12 16:16:54.210  INFO 11964 --- [main] c.e.d.c.ExplicadorControllerTest         : Started ExplicadorControllerTest in 0.634 seconds (JVM running for 11.083)
+2020-01-12 16:16:54.224  INFO 11964 --- [main] c.e.d.controllers.ExplicadorController   : Received a Get request.
+2020-01-12 16:16:54.248  INFO 11964 --- [main] c.e.d.controllers.ExplicadorController   : Received a post request.
+2020-01-12 16:16:54.249  INFO 11964 --- [main] c.e.d.controllers.ExplicadorController   : Explainer created and associated with degree successfully.
+2020-01-12 16:16:54.265  INFO 11964 --- [main] c.e.d.controllers.ExplicadorController   : Received a post request.
+2020-01-12 16:16:54.286  INFO 11964 --- [main] c.e.d.controllers.ExplicadorController   : Received a post request.
+2020-01-12 16:16:54.287  INFO 11964 --- [main] c.e.d.controllers.ExplicadorController   : Explainer created with success.
+2020-01-12 16:16:54.290  INFO 11964 --- [main] c.e.d.controllers.ExplicadorController   : Received a post request.
+2020-01-12 16:16:54.307  INFO 11964 --- [main] c.e.d.controllers.ExplicadorController   : Received a get request
+2020-01-12 16:16:54.316  INFO 11964 --- [main] c.e.d.controllers.ExplicadorController   : Received a get request
+2020-01-12 16:16:54.323  INFO 11964 --- [main] c.e.d.controllers.ExplicadorController   : Received a get request
+2020-01-12 16:16:54.367  INFO 11964 --- [main] c.e.d.c.FaculdadeControllerTest          : Starting FaculdadeControllerTest on DESKTOP-L0NO9V0 with PID 11964 (started by Asus� in C:\Users\Asus�\Desktop\Docs\pastagit\esofproj)
+2020-01-12 16:16:54.379  INFO 11964 --- [main] c.e.d.c.FaculdadeControllerTest          : No active profile set, falling back to default profiles: default
+2020-01-12 16:16:54.840  INFO 11964 --- [main] c.e.d.c.FaculdadeControllerTest          : Started FaculdadeControllerTest in 0.504 seconds (JVM running for 11.713)
+2020-01-12 16:16:54.861  INFO 11964 --- [main] c.e.d.controllers.FaculdadeController    : Received a get request
+2020-01-12 16:16:54.882  INFO 11964 --- [main] c.e.d.controllers.FaculdadeController    : Received a Get request.
+2020-01-12 16:16:54.883  INFO 11964 --- [main] c.e.d.controllers.FaculdadeController    : College created successfully.
+2020-01-12 16:16:54.885  INFO 11964 --- [main] c.e.d.controllers.FaculdadeController    : Received a Get request.
+2020-01-12 16:16:54.969  INFO 11964 --- [main] com.example.demo.DemoApplicationTests    : Starting DemoApplicationTests on DESKTOP-L0NO9V0 with PID 11964 (started by Asus� in C:\Users\Asus�\Desktop\Docs\pastagit\esofproj)
+2020-01-12 16:16:54.969  INFO 11964 --- [main] com.example.demo.DemoApplicationTests    : No active profile set, falling back to default profiles: default
+2020-01-12 16:17:00.272  INFO 11964 --- [main] com.example.demo.Bootstrap               : Startup
+2020-01-12 16:17:00.425  INFO 11964 --- [main] com.example.demo.DemoApplicationTests    : Started DemoApplicationTests in 5.48 seconds (JVM running for 17.296)
+2020-01-12 16:17:00.494  INFO 11964 --- [main] c.e.demo.services.ExplicadorServiceTest  : Starting ExplicadorServiceTest on DESKTOP-L0NO9V0 with PID 11964 (started by Asus� in C:\Users\Asus�\Desktop\Docs\pastagit\esofproj)
+2020-01-12 16:17:00.502  INFO 11964 --- [main] c.e.demo.services.ExplicadorServiceTest  : No active profile set, falling back to default profiles: default
+2020-01-12 16:17:02.148  INFO 11964 --- [main] com.example.demo.Bootstrap               : Startup
+2020-01-12 16:17:02.176  INFO 11964 --- [main] c.e.demo.services.ExplicadorServiceTest  : Started ExplicadorServiceTest in 1.714 seconds (JVM running for 19.049)
+2020-01-12 16:17:02.380 ERROR 11964 --- [SpringContextShutdownHook] .SchemaDropperImpl$DelayedDropActionImpl : HHH000478: Unsuccessful: drop table explicacao if exists
+>>>>>>> origin/master
