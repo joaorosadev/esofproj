@@ -9,7 +9,6 @@ import lombok.ToString;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
-import java.time.LocalTime;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -30,7 +29,7 @@ public class Estudante {
     @JsonBackReference
     private Curso curso;
 
-    @OneToMany(mappedBy = "estudante",cascade = CascadeType.PERSIST)
+    @OneToMany(mappedBy = "estudante",cascade = CascadeType.ALL)
     @JsonManagedReference(value="secondParent")
     private Set<Explicacao> explicacoes=new HashSet<>();
 

@@ -1,0 +1,6 @@
+2021-08-02 11:51:10.154  INFO 24309 --- [restartedMain] com.example.demo.DemoApplication         : Starting DemoApplication on ricardo with PID 24309 (started by ricardo in /home/ricardo/Documentos/Projetos Universidade/Engenharia de Software/EsofProj/esofproj)
+2021-08-02 11:51:10.159  INFO 24309 --- [restartedMain] com.example.demo.DemoApplication         : No active profile set, falling back to default profiles: default
+2021-08-02 11:51:12.071  INFO 24309 --- [restartedMain] com.example.demo.Bootstrap               : Startup
+2021-08-02 11:51:12.169  INFO 24309 --- [restartedMain] com.example.demo.DemoApplication         : Started DemoApplication in 2.252 seconds (JVM running for 2.702)
+2021-08-02 11:53:19.001  INFO 24309 --- [http-nio-8080-exec-2] c.e.demo.controllers.CursoController     : Received a get request
+2021-08-02 11:54:17.922  INFO 24309 --- [http-nio-8080-exec-5] c.e.d.controllers.ExplicadorController   : Received a get request

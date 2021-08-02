@@ -2,7 +2,6 @@ package com.example.demo.services;
 
 import com.example.demo.models.Cadeira;
 import com.example.demo.models.Curso;
-import com.example.demo.models.Faculdade;
 import com.example.demo.repositories.CadeiraRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

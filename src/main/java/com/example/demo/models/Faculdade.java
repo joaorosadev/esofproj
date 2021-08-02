@@ -22,6 +22,10 @@ public class Faculdade {
     @JsonManagedReference
     private Set<Curso> cursos=new HashSet<>();
 
+    @OneToMany(mappedBy = "faculdade",cascade = CascadeType.PERSIST)
+    @JsonManagedReference(value="bigParent")
+    private Set<Explicador> explicadors=new HashSet<>();
+
     public Faculdade(String nome){
         this.nome = nome;
     }
@@ -29,5 +33,10 @@ public class Faculdade {
     public void addCurso(Curso curso){
         this.cursos.add(curso);
         curso.setFaculdade(this);
+    }
+
+    public void addExplicador(Explicador explicador){
+        this.explicadors.add(explicador);
+        explicador.setFaculdade(this);
     }
 }

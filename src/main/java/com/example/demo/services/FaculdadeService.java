@@ -1,6 +1,5 @@
 package com.example.demo.services;
 
-import com.example.demo.models.Explicador;
 import com.example.demo.models.Faculdade;
 import com.example.demo.repositories.FaculdadeRepo;
 import org.springframework.beans.factory.annotation.Autowired;

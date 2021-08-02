@@ -1,7 +1,6 @@
 package com.example.demo.models;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
@@ -25,7 +24,6 @@ public class Cadeira {
     @JsonBackReference
     private Curso curso;
 
-    //Added Persist
     @ManyToOne(cascade = CascadeType.PERSIST)
     @ToString.Exclude
     @EqualsAndHashCode.Exclude
@@ -42,5 +40,9 @@ public class Cadeira {
 
     public void setExplicador(Explicador explicador) {
         this.explicador = explicador;
+    }
+
+    public String getNome() {
+        return nome;
     }
 }

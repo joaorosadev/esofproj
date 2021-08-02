@@ -25,9 +25,13 @@ class EstudanteTest {
         Estudante estudante = new Estudante("António","123321");
         Explicador explicador = new Explicador("Fábio","321");
         Cadeira cadeira = new Cadeira("LP");
+        Curso curso = new Curso("Eng");
         LocalTime hmIn = LocalTime.of(12,0), hmFim = LocalTime.of(14,0);
         Disponibilidade disp = new Disponibilidade(DayOfWeek.FRIDAY,hmIn,hmFim);
 
+        curso.addExplicador(explicador);
+        curso.addEstudante(estudante);
+        curso.addCadeira(cadeira);
         explicador.addCadeira(cadeira);
         explicador.addDisponibilidade(disp);
 

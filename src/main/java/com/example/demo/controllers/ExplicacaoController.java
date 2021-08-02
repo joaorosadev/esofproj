@@ -25,11 +25,12 @@ public class ExplicacaoController {
     @Autowired
     private ExplicacaoService explicacaoService;
 
-    //10 FALTA TESTAR NO POSTMAN
     @PostMapping(produces = MediaType.APPLICATION_JSON_VALUE,consumes = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Explicacao> createExplicacao(@RequestBody Explicacao explicacao){
+        logger.info("Received a Post request.");
         Optional<Explicacao> optionalExplicacao = this.explicacaoService.createExplicacao(explicacao);
         if(optionalExplicacao.isPresent()){
+            logger.info("Meeting created successfully.");
             return ResponseEntity.ok(optionalExplicacao.get());
         }
         throw new ExplicacaoController.ExplicacaoAlreadyExistsException();
@@ -40,6 +41,7 @@ public class ExplicacaoController {
 
         public ExplicacaoAlreadyExistsException() {
             super("Explicacao já existe.");
+            logger.error("Post request failed");
         }
     }
 }

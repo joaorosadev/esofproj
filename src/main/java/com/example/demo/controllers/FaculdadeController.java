@@ -25,15 +25,16 @@ public class FaculdadeController {
     @RequestMapping(method = RequestMethod.GET)
     public ResponseEntity<Iterable<Faculdade>> getAllFaculdades(){
         this.logger.info("Received a get request");
-
         return ResponseEntity.ok(this.faculdadeService.findAll());
     }
 
-    //2 (FUNCIONA NO POSTMAN MAS TESTE FALHA)
+    //2
     @PostMapping(produces = MediaType.APPLICATION_JSON_VALUE,consumes = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Faculdade> createFaculdade(@RequestBody Faculdade faculdade){
+        logger.info("Received a Get request.");
         Optional<Faculdade> optionalFaculdade = this.faculdadeService.createFaculdade(faculdade);
         if(optionalFaculdade.isPresent()){
+            logger.info("College created successfully.");
             return ResponseEntity.ok(optionalFaculdade.get());
         }
         throw new FaculdadeController.FaculdadeAlreadyExistsException(faculdade.getNome());
@@ -46,11 +47,4 @@ public class FaculdadeController {
             super("A faculdade com nome: "+name+" já existe.");
         }
     }
-
-    //Este metodo tem de verificar se a fac já existe na base de dados, se existir devolve ResponseEntity.badRequest()
-    /*@PostMapping(value = "",produces = MediaType.APPLICATION_JSON_VALUE,consumes = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<Faculdade> createFaculdade(@RequestBody Faculdade faculdade){
-        System.out.println(faculdade);
-        return ResponseEntity.ok().build();
-    }*/
 }
